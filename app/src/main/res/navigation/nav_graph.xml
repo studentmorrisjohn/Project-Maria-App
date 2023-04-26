@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.projectmariaapp.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.projectmariaapp.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.projectmariaapp.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_sendSosFragment"
+            app:destination="@id/sendSosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendSosFragment"
+        android:name="com.example.projectmariaapp.SendSosFragment"
+        android:label="fragment_send_sos"
+        tools:layout="@layout/fragment_send_sos" >
+        <action
+            android:id="@+id/action_sendSosFragment_to_updateStatusFragment"
+            app:destination="@id/updateStatusFragment" />
+        <action
+            android:id="@+id/action_sendSosFragment_to_sendDetailsFragment"
+            app:destination="@id/sendDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendDetailsFragment"
+        android:name="com.example.projectmariaapp.SendDetailsFragment"
+        android:label="fragment_send_details"
+        tools:layout="@layout/fragment_send_details" >
+        <action
+            android:id="@+id/action_sendDetailsFragment_to_updateStatusFragment"
+            app:destination="@id/updateStatusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateStatusFragment"
+        android:name="com.example.projectmariaapp.UpdateStatusFragment"
+        android:label="fragment_update_status"
+        tools:layout="@layout/fragment_update_status" >
+        <action
+            android:id="@+id/action_updateStatusFragment_to_sendDetailsFragment"
+            app:destination="@id/sendDetailsFragment" />
+    </fragment>
+</navigation>
